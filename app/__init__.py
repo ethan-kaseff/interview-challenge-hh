@@ -1,4 +1,4 @@
-from app.models import db
+from app.models import db, Color
 from flask import Flask
 from flask_migrate import Migrate
 import os
@@ -15,6 +15,12 @@ app.config.from_mapping({
 
 # Give us seed command
 app.cli.add_command(seed_commands)
+
+@app.route('/colors', methods=['GET'])
+def get_colors():
+    colors = Color.query.order_by(Color.hex_code).all()
+
+    return { 'colors': [color.hex_code for color in colors]}
 
 # Connect App with database
 db.init_app(app)

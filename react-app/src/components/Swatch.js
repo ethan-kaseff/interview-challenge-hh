@@ -1,15 +1,20 @@
 import React from 'react'
 
-function Swatch({hexCode, bg}) {
-  // console.log(hexCode)
+function Swatch({hexCode, size, setCurrentColor}) {
 
   return (
-    <div className='flex flex-col w-36 h-48'>
+    <div 
+      className={`flex flex-col ${size} m-6 border-[.5px] border-white rounded-md shadow-[0px_0px_6px_1px_#888]`}
+      onClick={() => setCurrentColor(hexCode) }
+      id={hexCode}
+    >
       <div 
-        className='h-5/6'
+        className='h-full rounded-md'
         style={{ backgroundColor: hexCode }}
       ></div>
-      <div className='h-1/6'>{hexCode}</div>
+      <div className='flex h-2/6 pl-4 p-2 items-center'>
+        <p>{hexCode}</p>
+      </div>
     </div>
   )
 }

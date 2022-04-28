@@ -12,7 +12,7 @@ function Swatch({hexCode, size, setCurrentColor}) {
         className='h-full rounded-md'
         style={{ backgroundColor: hexCode }}
       ></div>
-      <div className='flex h-2/6 pl-4 p-2 items-center'>
+      <div className='flex h-[25%] pl-[8%] items-center'>
         <p>{hexCode}</p>
       </div>
     </div>

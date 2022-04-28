@@ -11,13 +11,10 @@ function AllColors({colors, setCurrentColor}) {
     const page = colorsTemp.splice(0, 12);
     pages.push(page);
     pageNumbers.push(pageNumbers.length + 1)
-    console.log(pages)
-    console.log(pageNumbers)
   }
 
-  const pageButton = (e) => {
+  const paginateButton = (e) => {
     setCurrentPage(e.target.id);
-    console.log('hit')
   }
 
   return (
@@ -31,10 +28,11 @@ function AllColors({colors, setCurrentColor}) {
       <div className='flex justify-center mb-20'>
         {pageNumbers.map(page => (
           <button
-            onClick={pageButton}
+            onClick={paginateButton}
             href=''
             id={page}
             className='hover:border-b-2 border-gray-200 p-2'
+            key={page}
           >{page}</button>
         ))}
       </div>

@@ -48,13 +48,23 @@ function App() {
     <div className="text-xl">
       <Nav />
       <Main>
-        <Sidebar colors={colors}/>
+        <Sidebar 
+          colors={colors} 
+          hexes={hexes} 
+          setCurrentColor={setCurrentColor}
+        />
         <ColorSwatches>
           {currentColor === '' &&
-            <AllColors colors={hexes} setCurrentColor={setCurrentColor}/>
+            <AllColors 
+            colors={hexes} 
+            setCurrentColor={setCurrentColor}
+            />
           }
           {currentColor !== '' && 
-            <ColorDetails hexCode={currentColor} setCurrentColor={setCurrentColor} />
+            <ColorDetails 
+              hexCode={currentColor} 
+              setCurrentColor={setCurrentColor} 
+            />
           }
         </ColorSwatches>
       </Main>

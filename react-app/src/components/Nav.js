@@ -7,7 +7,7 @@ function Nav() {
       <img 
         src={logo} 
         alt='logo'
-        classname=''
+        className=''
       ></img>
       <input 
         type='text'

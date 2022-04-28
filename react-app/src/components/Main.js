@@ -2,7 +2,7 @@ import React from 'react'
 
 function Main({children}) {
   return (
-    <div>
+    <div className='flex h-full'>
       {children}
     </div>
   )

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function ColorSwatches() {
+function ColorSwatches({children}) {
   return (
-    <div>
-      
+    <div className='w-full'>
+      {children}
     </div>
   )
 }

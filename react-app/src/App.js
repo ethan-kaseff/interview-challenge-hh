@@ -64,7 +64,7 @@ function App() {
   }, [])
 
   return (
-    <div className="text-xl">
+    <div className="text-xl font-Source">
       <Nav />
         <Main>
           <Sidebar 

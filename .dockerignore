@@ -1,0 +1,5 @@
+react-app/node_modules
+.venv
+Pipfile
+Pipfile.lock
+.DS_Store

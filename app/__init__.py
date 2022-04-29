@@ -9,13 +9,13 @@ from .seeds import seed_commands
 app = Flask(__name__)
 
 # Config 
-uri = os.environ.get("DATABASE_URL")  # or other relevant config var
-if uri.startswith("postgres://"):
-    uri = uri.replace("postgres://", "postgresql://", 1)
+# uri = os.getenv("DATABASE_URL")  # or other relevant config var
+# if uri.startswith("postgres://"):
+#     uri = uri.replace("postgres://", "postgresql://", 1)
 # rest of connection code using the connection string `uri`
 
 app.config.from_mapping({
-    'SQLALCHEMY_DATABASE_URI': uri, # os.environ.get('DATABASE_URL'),
+    'SQLALCHEMY_DATABASE_URI': os.environ.get('DATABASE_URL'),
     'SQLALCHEMY_TRACK_MODIFICATIONS': False,
 })
 

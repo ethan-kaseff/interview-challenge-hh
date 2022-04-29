@@ -4,7 +4,6 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-psycopg2-binary = "*"
 flask-sqlalchemy = "*"
 alembic = "*"
 flask-migrate = "*"
@@ -13,6 +12,7 @@ python-dotenv = "*"
 gunicorn = "*"
 
 [dev-packages]
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.9"

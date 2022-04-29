@@ -2,14 +2,20 @@ from app.models import db, Color
 from flask import Flask
 from flask_migrate import Migrate
 import os
+import re
 from .seeds import seed_commands
 
 # Initialize App
 app = Flask(__name__)
 
 # Config 
+uri = os.getenv("DATABASE_URL")  # or other relevant config var
+if uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
+# rest of connection code using the connection string `uri`
+
 app.config.from_mapping({
-    'SQLALCHEMY_DATABASE_URI': os.environ.get('DATABASE_URL'),
+    'SQLALCHEMY_DATABASE_URI': uri, # os.environ.get('DATABASE_URL'),
     'SQLALCHEMY_TRACK_MODIFICATIONS': False,
 })
 
